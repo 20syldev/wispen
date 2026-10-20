@@ -1,0 +1,8 @@
+.next/
+node_modules/
+out/
+public/favicon.ico
+public/icons/
+public/sw.js
+next-env.d.ts
+*.tsbuildinfo

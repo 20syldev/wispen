@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "lib": ["webworker", "es2022"],
+        "types": [],
+        "strict": true,
+        "skipLibCheck": true,
+        "module": "esnext",
+        "moduleDetection": "legacy",
+        "removeComments": true,
+        "newLine": "lf",
+        "noEmitOnError": true,
+        "rootDir": ".",
+        "outDir": "../../public"
+    },
+    "include": ["*.ts"]
+}

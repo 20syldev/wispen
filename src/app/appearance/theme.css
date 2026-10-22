@@ -1,0 +1,219 @@
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-canvas: var(--canvas);
+    --color-grid: var(--grid);
+    --color-grid-major: var(--grid-major);
+    --color-selection: var(--selection);
+    --color-mark: var(--mark);
+    --color-mark-foreground: var(--mark-foreground);
+    --color-raised: var(--raised);
+
+    --radius-sm: var(--radius-small);
+    --radius-md: var(--radius-medium);
+    --radius-lg: var(--radius);
+    --radius-xl: var(--radius-large);
+    --radius-island: var(--radius);
+    --radius-dock: var(--dock-radius);
+    --radius-dock-item: var(--dock-item-radius);
+    --radius-cta: var(--cta-radius);
+
+    --shadow-xs: var(--elevation-xs);
+    --shadow-sm: var(--elevation-sm);
+    --shadow-island: var(--elevation-island);
+    --shadow-lg: var(--elevation-lg);
+
+    --font-sans: var(--ui-font), ui-sans-serif, system-ui, sans-serif;
+    --font-display: var(--brand-font), ui-sans-serif, system-ui, sans-serif;
+    --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+    --font-num: var(--num-font), ui-sans-serif, system-ui, sans-serif;
+}
+
+/*
+ * One visual identity, "encre": a near-black ink interface with a single vermilion marker, a
+ * Caveat wordmark and marker swipes as signatures. The theme is the light/dark class of <html> and
+ * data-canvas="tinted" swaps the pure white canvas for a warm paper with a very light grain.
+ * Restyling the app only means editing this file.
+ * Canvas colors (--canvas, --canvas-*) are hex so exported SVG files stay readable by any tool.
+ */
+
+/* Light theme: interface tokens, radii, elevations and canvas palette. */
+:root,
+.light {
+    --ui-font: var(--font-space-grotesk);
+    --num-font: var(--font-jetbrains-mono);
+    --brand-font: var(--font-space-grotesk);
+    --brand-style: normal;
+    --brand-weight: 600;
+    --brand-stretch: 100%;
+    --brand-tracking: -0.01em;
+    --word-font: var(--font-caveat);
+    --word-style: normal;
+    --word-weight: 700;
+    --word-stretch: 100%;
+    --word-tracking: 0em;
+
+    --background: oklch(0.962 0.006 85);
+    --foreground: oklch(0.2 0.015 262);
+    --card: oklch(0.993 0.003 85);
+    --card-foreground: oklch(0.2 0.015 262);
+    --popover: oklch(0.995 0.003 85);
+    --popover-foreground: oklch(0.2 0.015 262);
+    --primary: oklch(0.575 0.2 33);
+    --primary-foreground: oklch(0.99 0.005 85);
+    --secondary: oklch(0.95 0.006 85);
+    --secondary-foreground: oklch(0.25 0.015 262);
+    --muted: oklch(0.952 0.006 85);
+    --muted-foreground: oklch(0.48 0.012 262);
+    --accent: oklch(0.94 0.008 85);
+    --accent-foreground: oklch(0.2 0.015 262);
+    --destructive: oklch(0.5 0.19 15);
+    --border: oklch(0.89 0.008 80);
+    --input: oklch(0.86 0.01 80);
+    --ring: oklch(0.6 0.19 33);
+    --grid: oklch(0.82 0.012 80);
+    --grid-major: oklch(0.76 0.014 80);
+    --selection: oklch(0.6 0.2 33);
+    --mark: oklch(0.58 0.2 33.5);
+    --mark-foreground: oklch(0.99 0.005 85);
+    --raised: oklch(0.998 0.002 85);
+
+    --radius-small: 8px;
+    --radius-medium: 12px;
+    --radius: 18px;
+    --radius-large: 26px;
+    --dock-radius: 999px;
+    --dock-item-radius: 999px;
+    --cta-radius: 999px;
+
+    --elevation-xs: 0 1px 2px oklch(0.25 0.02 262 / 0.06);
+    --elevation-sm:
+        0 1px 2px oklch(0.25 0.02 262 / 0.05), 0 3px 8px -3px oklch(0.25 0.02 262 / 0.08);
+    --elevation-island:
+        0 1px 1px oklch(0.25 0.02 262 / 0.04), 0 6px 18px -8px oklch(0.25 0.02 262 / 0.12),
+        0 18px 40px -20px oklch(0.25 0.02 262 / 0.14);
+    --elevation-lg:
+        0 2px 4px oklch(0.25 0.02 262 / 0.04), 0 18px 44px -14px oklch(0.25 0.02 262 / 0.22);
+
+    --canvas: #ffffff;
+    --canvas-paper: var(--canvas);
+    --grain-opacity: 0;
+    --grain-blend: multiply;
+
+    --canvas-ink: #171b22;
+    --canvas-ink-soft: #dcdee2;
+    --canvas-gray: #5d5d64;
+    --canvas-gray-soft: #ebebee;
+    --canvas-red: #d73337;
+    --canvas-red-soft: #ffe0de;
+    --canvas-orange: #e16c10;
+    --canvas-orange-soft: #ffe5ce;
+    --canvas-yellow: #ca8a10;
+    --canvas-yellow-soft: #feefad;
+    --canvas-green: #1a9951;
+    --canvas-green-soft: #d2f6dd;
+    --canvas-teal: #00958f;
+    --canvas-teal-soft: #cef4f1;
+    --canvas-blue: #2474cf;
+    --canvas-blue-soft: #d4ebff;
+    --canvas-violet: #7454d6;
+    --canvas-violet-soft: #e8e3ff;
+    --canvas-pink: #d44996;
+    --canvas-pink-soft: #ffe1ef;
+
+    color-scheme: light;
+}
+
+/* Dark theme: overrides of the light tokens. */
+.dark {
+    --background: oklch(0.17 0.02 262);
+    --foreground: oklch(0.94 0.012 85);
+    --card: oklch(0.225 0.022 262);
+    --card-foreground: oklch(0.94 0.012 85);
+    --popover: oklch(0.24 0.022 262);
+    --popover-foreground: oklch(0.94 0.012 85);
+    --primary: oklch(0.68 0.18 36);
+    --primary-foreground: oklch(0.17 0.02 262);
+    --secondary: oklch(0.27 0.02 262);
+    --secondary-foreground: oklch(0.94 0.012 85);
+    --muted: oklch(0.265 0.02 262);
+    --muted-foreground: oklch(0.74 0.015 85);
+    --accent: oklch(0.29 0.022 262);
+    --accent-foreground: oklch(0.94 0.012 85);
+    --destructive: oklch(0.7 0.17 20);
+    --border: oklch(0.32 0.022 262);
+    --input: oklch(0.36 0.022 262);
+    --ring: oklch(0.7 0.17 36);
+    --grid: oklch(0.35 0.025 262);
+    --grid-major: oklch(0.42 0.025 262);
+    --selection: oklch(0.7 0.17 36);
+    --mark: oklch(0.66 0.18 36);
+    --mark-foreground: oklch(0.17 0.02 262);
+    --raised: oklch(0.32 0.022 262);
+
+    --elevation-xs: 0 1px 2px oklch(0.05 0.02 262 / 0.4);
+    --elevation-sm:
+        0 1px 2px oklch(0.05 0.02 262 / 0.35), 0 3px 8px -3px oklch(0.05 0.02 262 / 0.45);
+    --elevation-island:
+        inset 0 1px 0 oklch(1 0.01 85 / 0.04), 0 1px 1px oklch(0.05 0.02 262 / 0.3),
+        0 6px 18px -8px oklch(0.05 0.02 262 / 0.5), 0 18px 40px -20px oklch(0.05 0.02 262 / 0.6);
+    --elevation-lg:
+        inset 0 1px 0 oklch(1 0.01 85 / 0.05), 0 2px 4px oklch(0.05 0.02 262 / 0.35),
+        0 18px 44px -14px oklch(0.05 0.02 262 / 0.7);
+
+    --canvas: #121417;
+    --canvas-paper: var(--canvas);
+    --grain-blend: screen;
+
+    --canvas-ink: #e7e7ec;
+    --canvas-ink-soft: #323236;
+    --canvas-gray: #aaaab2;
+    --canvas-gray-soft: #28282c;
+    --canvas-red: #f97676;
+    --canvas-red-soft: #4e2020;
+    --canvas-orange: #fb9d59;
+    --canvas-orange-soft: #4e2b17;
+    --canvas-yellow: #f0ce65;
+    --canvas-yellow-soft: #4d3e10;
+    --canvas-green: #63ca84;
+    --canvas-green-soft: #163824;
+    --canvas-teal: #59c5bf;
+    --canvas-teal-soft: #0d3737;
+    --canvas-blue: #6baffa;
+    --canvas-blue-soft: #1a314e;
+    --canvas-violet: #aa9afc;
+    --canvas-violet-soft: #312951;
+    --canvas-pink: #f38abe;
+    --canvas-pink-soft: #4d2238;
+
+    color-scheme: dark;
+}
+
+/* Tinted canvas: a warm paper with a very light grain. */
+[data-canvas="tinted"],
+[data-canvas="tinted"] .light {
+    --canvas: #faf7f3;
+    --grain-opacity: 0.07;
+}
+
+[data-canvas="tinted"].dark,
+[data-canvas="tinted"] .dark {
+    --canvas: #111620;
+    --grain-opacity: 0.05;
+}

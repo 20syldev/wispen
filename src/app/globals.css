@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@import "./appearance/theme.css";
+@import "./appearance/base.css";
+@import "./appearance/controls.css";
+@import "./appearance/overlay.css";
+@import "./appearance/widgets.css";
+@import "./appearance/scrollbar.css";
+
+@custom-variant dark (&:is(.dark *));

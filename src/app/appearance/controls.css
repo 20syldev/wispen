@@ -1,0 +1,187 @@
+/*
+ * Host of a sliding highlight, shared by the tool dock, the page tabs, the segmented controls and
+ * the document list. src/hooks/useGlide.ts measures the selected item (data-active,
+ * aria-selected or aria-checked) and the hovered or focused one, writes --glide-* and --glide-h*
+ * on the host, and sets data-glide and data-glide-hover. The selection thumb (::after) appears
+ * in place, then glides; the hover pill (::before) is lighter, sits under the thumb and slides
+ * the same way. Colors come from --glide-bg, --glide-shadow and --glide-hover.
+ */
+@utility glide {
+    position: relative;
+    isolation: isolate;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        opacity: 0;
+        transition:
+            opacity 140ms ease-out,
+            background-color 140ms ease-out;
+    }
+
+    &::before {
+        width: var(--glide-hw, 0px);
+        height: var(--glide-hh, 0px);
+        border-radius: var(--glide-hr, 999px);
+        background: var(--glide-hover, var(--ov-hover));
+        transform: translate(var(--glide-hx, 0px), var(--glide-hy, 0px));
+    }
+
+    &::after {
+        width: var(--glide-w, 0px);
+        height: var(--glide-h, 0px);
+        border-radius: var(--glide-r, 999px);
+        background: var(--glide-bg, color-mix(in oklch, var(--mark) 13%, transparent));
+        box-shadow: var(
+            --glide-shadow,
+            inset 0 0 0 1px color-mix(in oklch, var(--mark) 22%, transparent)
+        );
+        transform: translate(var(--glide-x, 0px), var(--glide-y, 0px));
+    }
+
+    &[data-glide]::after,
+    &[data-glide-hover]::before {
+        opacity: 1;
+    }
+
+    &[data-glide-on]::before {
+        opacity: 0;
+    }
+
+    &[data-glide="ready"]::after {
+        transition: none;
+    }
+
+    &[data-glide="live"]::after {
+        transition:
+            transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+            width 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+            height 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+            opacity 140ms ease-out,
+            background-color 140ms ease-out;
+    }
+
+    &[data-glide-hover="live"]::before {
+        transition:
+            transform 170ms cubic-bezier(0.2, 0.8, 0.2, 1),
+            width 170ms cubic-bezier(0.2, 0.8, 0.2, 1),
+            height 170ms cubic-bezier(0.2, 0.8, 0.2, 1),
+            opacity 140ms ease-out,
+            background-color 140ms ease-out;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        &::before,
+        &::after,
+        &[data-glide="live"]::after,
+        &[data-glide-hover="live"]::before {
+            transition:
+                opacity 80ms linear,
+                background-color 80ms linear;
+        }
+    }
+}
+
+/* Thumb of a segmented control: a raised key instead of the marker tint. */
+@utility glide-raised {
+    --glide-bg: var(--raised);
+    --glide-hover: var(--accent);
+    --glide-shadow: inset 0 0 0 1px var(--border), var(--elevation-sm);
+}
+
+/*
+ * Plain icon or text button of a bar: the background and the color fade in together, with the
+ * same soft tint as the shared hover pills, and stay on while the menu the button opens is open.
+ */
+@utility hover-soft {
+    transition:
+        color 120ms ease-out,
+        background-color 140ms ease-out;
+
+    &:hover,
+    &:is([data-state="open"], [aria-expanded="true"]) {
+        color: var(--foreground);
+        background-color: var(--ov-hover);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        transition: background-color 80ms linear;
+    }
+}
+
+/* Signature of an enabled toggle: a small marker dot in the corner. */
+@utility toggle-dot {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 6px;
+    height: 6px;
+    pointer-events: none;
+    border-radius: 50%;
+    background: var(--mark);
+    box-shadow: 0 0 0 1.5px var(--card);
+}
+
+/* Very light grain painted under the drawing on tinted canvases. */
+@utility paper-grain {
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        background-size: 180px 180px;
+        opacity: var(--grain-opacity);
+        mix-blend-mode: var(--grain-blend);
+    }
+}
+
+/* ---- Appearance selector: segmented controls ---- */
+
+/* Track of a segmented control, shaped like the dock: a pill. */
+@utility segment-track {
+    padding: 3px;
+    background: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: var(--dock-radius);
+}
+
+/*
+ * Option of a segmented control inside a glide host: the thumb and the hover pill are drawn by
+ * the host, the option only changes color. The slot attribute lifts the specificity over the base
+ * toggle styles.
+ */
+@utility segment-item {
+    &[data-slot="toggle-group-item"] {
+        flex: 1 1 0;
+        height: 30px;
+        gap: 6px;
+        padding-inline: 8px;
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--muted-foreground);
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: var(--dock-item-radius);
+        transition: color 140ms ease-out;
+    }
+
+    &[data-slot="toggle-group-item"]:is(:hover, [data-state="on"], [aria-checked="true"]) {
+        color: var(--foreground);
+        background: transparent;
+    }
+}
+
+/* Pure white canvas swatch (the base canvas token, spelled out so a tinted page cannot leak). */
+@utility paper-white {
+    background: #ffffff;
+
+    .dark & {
+        background: #121417;
+    }
+}

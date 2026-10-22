@@ -1,0 +1,26 @@
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* Brand typography: document name and dialog titles. */
+@utility font-brand {
+    font-family: var(--brand-font), ui-sans-serif, system-ui, sans-serif;
+    font-style: var(--brand-style);
+    font-weight: var(--brand-weight);
+    font-stretch: var(--brand-stretch);
+    letter-spacing: var(--brand-tracking);
+}
+
+/* Wordmark typography of the logo. */
+@utility font-wordmark {
+    font-family: var(--word-font), Georgia, serif;
+    font-style: var(--word-style);
+    font-weight: var(--word-weight);
+    font-stretch: var(--word-stretch);
+    letter-spacing: var(--word-tracking);
+}

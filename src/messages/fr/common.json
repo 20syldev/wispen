@@ -1,0 +1,22 @@
+{
+    "appName": "wispen",
+    "description": "Tableau blanc libre et simple : formes arrondies, textes, flèches, pages, sauvegarde locale et exports.",
+    "untitled": "Sans titre",
+    "pageName": "Page {number}",
+    "copyOf": "{name} (copie)",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "close": "Fermer",
+    "delete": "Supprimer",
+    "rename": "Renommer",
+    "duplicate": "Dupliquer",
+    "save": "Enregistrer",
+    "loading": "Chargement",
+    "canvasLabel": "Zone de dessin",
+    "textEditorLabel": "Éditer le texte",
+    "imageError": "Impossible de lire cette image.",
+    "pasteError": "Rien à coller depuis le presse-papiers.",
+    "importError": "Format de fichier non reconnu : {name}",
+    "importFailed": "Impossible d'importer {name}.",
+    "imported": "{name} importé."
+}

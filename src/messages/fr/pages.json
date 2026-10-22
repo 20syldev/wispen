@@ -1,0 +1,16 @@
+{
+    "label": "Pages du document",
+    "add": "Ajouter une page",
+    "hint": "Double-cliquez pour renommer",
+    "menuHint": "Clic droit pour plus d'options",
+    "nameLabel": "Nom de la page",
+    "rename": "Renommer",
+    "duplicate": "Dupliquer",
+    "moveLeft": "Déplacer à gauche",
+    "moveRight": "Déplacer à droite",
+    "delete": "Supprimer",
+    "deleteTitle": "Supprimer « {name} » ?",
+    "deleteDescription": "Cette page contient {count, plural, one {# élément} other {# éléments}}. Vous pourrez la récupérer avec Annuler.",
+    "deleteConfirm": "Supprimer la page",
+    "cancel": "Annuler"
+}

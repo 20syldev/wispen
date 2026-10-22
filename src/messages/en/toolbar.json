@@ -1,0 +1,8 @@
+{
+    "label": "Drawing tools",
+    "more": "More tools",
+    "moreActive": "More tools, {tool} active",
+    "moreTitle": "Other tools",
+    "lock": "Keep the tool active",
+    "lockHint": "Keep the tool active after each shape"
+}

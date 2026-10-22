@@ -1,0 +1,18 @@
+{
+    "title": "Que voulez-vous faire ?",
+    "description": "Recherchez une commande, un outil ou une page, puis validez avec Entrée.",
+    "placeholder": "Rechercher une commande",
+    "empty": "Aucune commande ne correspond.",
+    "active": "Actif",
+    "groups": {
+        "file": "Fichier",
+        "edit": "Édition",
+        "tools": "Outils",
+        "arrange": "Organisation",
+        "text": "Texte",
+        "view": "Affichage",
+        "page": "Pages",
+        "pages": "Aller à la page",
+        "plugin": "Extensions"
+    }
+}

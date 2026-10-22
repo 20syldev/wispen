@@ -1,0 +1,22 @@
+{
+    "appName": "wispen",
+    "description": "Free and simple whiteboard: rounded shapes, text, arrows, pages, local saving and exports.",
+    "untitled": "Untitled",
+    "pageName": "Page {number}",
+    "copyOf": "{name} (copy)",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close",
+    "delete": "Delete",
+    "rename": "Rename",
+    "duplicate": "Duplicate",
+    "save": "Save",
+    "loading": "Loading",
+    "canvasLabel": "Drawing area",
+    "textEditorLabel": "Edit text",
+    "imageError": "This image could not be read.",
+    "pasteError": "Nothing to paste from the clipboard.",
+    "importError": "Unrecognized file format: {name}",
+    "importFailed": "Could not import {name}.",
+    "imported": "{name} imported."
+}

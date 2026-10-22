@@ -1,0 +1,16 @@
+{
+    "label": "Document pages",
+    "add": "Add a page",
+    "hint": "Double-click to rename",
+    "menuHint": "Right-click for more options",
+    "nameLabel": "Page name",
+    "rename": "Rename",
+    "duplicate": "Duplicate",
+    "moveLeft": "Move left",
+    "moveRight": "Move right",
+    "delete": "Delete",
+    "deleteTitle": "Delete \"{name}\"?",
+    "deleteDescription": "This page holds {count, plural, one {# element} other {# elements}}. You can bring it back with Undo.",
+    "deleteConfirm": "Delete page",
+    "cancel": "Cancel"
+}

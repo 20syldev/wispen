@@ -1,0 +1,14 @@
+{
+    "zoom": "Zoom",
+    "zoomIn": "Zoom avant",
+    "zoomOut": "Zoom arrière",
+    "level": "{value} %",
+    "levelLabel": "Niveau de zoom {value} %, cliquer pour revenir à 100 %",
+    "reset": "Revenir à 100 %",
+    "options": "Options de zoom",
+    "fit": "Tout afficher",
+    "selection": "Zoomer sur la sélection",
+    "history": "Historique",
+    "undo": "Annuler",
+    "redo": "Rétablir"
+}

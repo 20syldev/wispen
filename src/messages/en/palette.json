@@ -1,0 +1,18 @@
+{
+    "title": "What do you want to do?",
+    "description": "Search for a command, a tool or a page, then press Enter.",
+    "placeholder": "Search for a command",
+    "empty": "No matching command.",
+    "active": "Active",
+    "groups": {
+        "file": "File",
+        "edit": "Edit",
+        "tools": "Tools",
+        "arrange": "Arrange",
+        "text": "Text",
+        "view": "View",
+        "page": "Pages",
+        "pages": "Go to page",
+        "plugin": "Plugins"
+    }
+}

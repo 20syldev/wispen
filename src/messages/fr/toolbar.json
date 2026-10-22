@@ -1,0 +1,8 @@
+{
+    "label": "Outils de dessin",
+    "more": "Plus d'outils",
+    "moreActive": "Plus d'outils, {tool} actif",
+    "moreTitle": "Autres outils",
+    "lock": "Garder l'outil actif",
+    "lockHint": "Garder l'outil actif après chaque tracé"
+}

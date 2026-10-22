@@ -1,0 +1,14 @@
+{
+    "zoom": "Zoom",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "level": "{value}%",
+    "levelLabel": "Zoom level {value}%, click to go back to 100%",
+    "reset": "Back to 100%",
+    "options": "Zoom options",
+    "fit": "Zoom to fit",
+    "selection": "Zoom to selection",
+    "history": "History",
+    "undo": "Undo",
+    "redo": "Redo"
+}
